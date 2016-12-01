@@ -31,7 +31,7 @@ The _rbind_ function is used to merge the test sets and the train sets thus crea
 ###2.Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 The columns of X are properly named according to the supplied "feature" file.
-The grep function and the standard subsetting options (_"["_ and _"]"_) are used to "filter" only the columns related to mean ("*mean*") or standard deviation ("*std*") values and the intermediate data are saved in a temporary data frame 
+The grep function and the standard subsetting options (_"["_ and _"]"_) are used to "filter" only the columns related to mean ("*mean*") or standard deviation ("*std*") values and the intermediate data are saved in a temporary data frame. 
  
 ###3.Uses descriptive activity names to name the activities in the data set
 
