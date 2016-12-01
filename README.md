@@ -1,53 +1,53 @@
 # Getting and cleaning data - Course Project
-
-## Human Activity Recognition Using Smartphones Dataset
-
-### Introduction
+# Human Activity Recognition Using Smartphones Dataset
+_________________________________
+## Introduction
 
 This repository contains the files needed to assemble, elaborate and produce a proper "tidy set" of data extracted from the Human Activity Recognition database which contains the 
 recording of 30 test subjects who have performed daily activities wearing a device (a retail smartphone) with embedded inertial sensors.
 The objective of the experiment was to train a predicting model of the nature of the activities performed (from a set of six) based on the data collected by the embedded gyroscope and accelerometer of the wearable device.
-
-### Prerequisites
+_________________________________
+## Prerequisites
 
 The script require a working R environment with the "base" library installed and loaded and it has been tested with CRAN R interpreter version 3.3.2.
 Moreover the data from the original archive (available at the following address: [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 ) should be properly unzipped in the working directory *preserving the original directory names and files paths*. 
-In case of doubts, please consult the documentation provided with the decompression software in use.
-
-### Script inner logic
+In case of doubts, please consult the documentation provided with the unarchiver software used.
+_________________________________
+## Script inner logic
 
 The provided script performs the following activities in order to create the tidy data set.
 First of all, it loads all the text files for either the train and test sets containing the parameters (X), the response variables (y) and the row index of the subject 
 to whom the variables are related to (subject). Moreover the explanatory labels for the activities and the columns names/labels for the X_train and X_test tables were also loaded. 
 All provided measures, variables, labels and indexes were supplied in text files without header and special separator character therefore all the tests have been loaded with the _sep=""_ and _header = FALSE_ options.
+The data for the Inertial Signals are not loaded because they would be discarded by the subsequent operations anyway. 
 
-1.Merges the training and the test sets to create one data set. 
+###1.Merges the training and the test sets to create one data set. 
 
-The rbind function is used to merge the test sets and the train sets. This create three temporary sets respectively based on the "bind" of X_train with X_test, y_train with y_test and subject_train with subject_test. 
+The _rbind_ function is used to merge the test sets and the train sets. This create three temporary data frames respectively based on the merge by rows of X_train with X_test, y_train with y_test and subject_train with subject_test. 
 
-2.Extracts only the measurements on the mean and standard deviation for each measurement. 
+###2.Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 The columns of X are properly named according to the supplied "feature" file.
-The grep function and the standard subsetting options (_"["_ and _"]"_) are used to "filter" only the columns related to means or standard deviations and save it in a temporary data frame 
+The grep function and the standard subsetting options (_"["_ and _"]"_) are used to "filter" only the columns related to mean ("*mean*") or standard deviation ("*std*") values and the intermediate data are saved in a temporary data frame 
  
-3.Uses descriptive activity names to name the activities in the data set
+###3.Uses descriptive activity names to name the activities in the data set
 
-The activity descriptions are loaded from the activity labels. The activity in the "y" table are properly names by merging the "y" and "activity_labels". 
-Though not mandatory in this specific case, in order to preserve the completness of the measures (in terms of number of rows), the all.x = TRUE is used.
+The activity descriptions are loaded from the activity labels. The activity in the "y" table are properly names by merging the "y" and "activity_labels" using the standard _merge_ command. 
+Though not mandatory in this specific case, in order to preserve the completness of the measures (in terms of number of rows), the all.x = TRUE is used to mimic a sql left join.
 
-4.Appropriately labels the data set with descriptive variable names. 
+###4.Appropriately labels the data set with descriptive variable names. 
 
-All the columns from the intermediate data frames are merged in a unique data frame using the cbind function then appropriate labels taken from the supplied "feature" file or described in the readme included in the original archive are applied to the columns name. 
+All the columns from the intermediate data frames are merged in a unique data frame using the _cbind_ function then appropriate labels taken from the supplied "feature" file (or described in the readme included in the original archive) are applied to the column names of the data frame. 
 
-5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+###5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Finally the average of all the variables is calculated using the _aggregate_ function summarizing the value for subject number and nature of the activity. 
-The columns names to whom the data were aggregated are named back and the final data set is extracted with the write.text function.
+Finally the average of all the variables is calculated providing the _avg_ function to the _aggregate_ command while summarizing the values for subject number and nature of the activity. 
+The columns names to whom the data were aggregated are renamed back and the final data set is extracted with the _write.text_ function.
 
-As the data contains measures for 30 individual in six activities, the end table should contains 180 rows (30*6) plus the header row.
-
-###License
+As the data contains measures for 30 individual fox six possible activities therefore the final "tidy" table should contain 30*6 (=180) rows plus the header.
+_________________________________
+## License
 
 The R script is released under a public domain license.
 
