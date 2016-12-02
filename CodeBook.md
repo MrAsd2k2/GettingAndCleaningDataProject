@@ -2,11 +2,10 @@
 
 ## Code Book for the tidy set 
 
-The source of the original data is the following archive [http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip)
-In the original text files, headers were not included: when needed, label descriptions or column names are described and provided in additional .txt files (included in the archive). With the exception of the X_train.txt and X_test.txt, all the text files include a single feature (column) for each sample (row).
+The present file describes the record schema for the supplied "tidy_data.txt" file and the assumptions and choices made compared to the project requirements and the original source of the data. 
 
-The "tidy" data set supplied is composed of 180 rows (181 with the header row) for 82 columns.
-There is not a file dseparator excluding a single space.
+
+The "tidy" data set supplied is composed of 180 rows (181 with the header row) for 82 columns without an explicit field separator.
 
 ### Subject and Activity
 
@@ -29,7 +28,7 @@ All the following fields are signed numeric floating point values exported as 16
 All the feature related to means and standard deviations from the original set were kept because explicitely mandated by the project requirements, therefore *measures related to columns labelled as "*meanFreq*" were included in the final "tidy" table as well*.
 
 To aid potential end-users integrating the final results in more complex projects and to improve the compatibility with the original data scheme, *the labels of the selected features were not changed* compared to the list supplied by the authors of the research in the "feature.txt" file.
-Nevertheless, the following variables all represent the _mean_ of a set of measurements for each subject and activity. 
+Nevertheless, the following variables all represent the _mean_ of a set of measurements for each subject and activity therefore their values represents a further aggregation of values compared to the original records. 
 
 * _tBodyAcc-mean()-X_: signed floating point               
 * _tBodyAcc-mean()-Y_: signed floating point
