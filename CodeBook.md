@@ -15,9 +15,9 @@ The first three fields includes features that represent the population. Please n
 and the interpretation of the results at a glance.
 The following fields identify the subjects and the related activities:
 
- * Subject: char[1], subject ID with possible values in the range between 1 and 30
- * Activity: char[1], activity ID with possible values from 1 to 6
- * ActivityLabel: char[18], string identifying the activity. The possible status are:
+ * _Subject_: char[1], subject ID with possible values in the range between 1 and 30
+ * _Activity_: char[1], activity ID with possible values from 1 to 6
+ * _ActivityLabel_: char[18], string identifying the activity. The possible status are:
   1 Walking
   2 Walking Upstairs
   3 Walking Downstairs
@@ -34,82 +34,82 @@ To aid potential end-users integrating the final results in more complex project
 Nevertheless, the following variables all represent the _mean_ of a set of measurements for each subject and activity. 
 
  
-* tBodyAcc-mean()-X: signed floating point               
-* tBodyAcc-mean()-Y: signed floating point
-* tBodyAcc-mean()-Z: signed floating point               
-* tBodyAcc-std()-X: signed floating point                
-* tBodyAcc-std()-Y: signed floating point               
-* tBodyAcc-std()-Z: signed floating point
-* tGravityAcc-mean()-X: signed floating point
-* tGravityAcc-mean()-Y: signed floating point
-* tGravityAcc-mean()-Z: signed floating point           
-* "tGravityAcc-std()-X: signed floating point
-* tGravityAcc-std()-Y: signed floating point
-* tGravityAcc-std()-Z: signed floating point
-* tBodyAccJerk-mean()-X: signed floating point          
-* tBodyAccJerk-mean()-Y: signed floating point
-* tBodyAccJerk-mean()-Z: signed floating point           
-* tBodyAccJerk-std()-X: signed floating point            
-* tBodyAccJerk-std()-Y: signed floating point           
-* tBodyAccJerk-std()-Z: signed floating point
-* tBodyGyro-mean()-X: signed floating point
-* tBodyGyro-mean()-Y: signed floating point
-* tBodyGyro-mean()-Z: signed floating point
-* tBodyGyro-std()-X: signed floating point
-* tBodyGyro-std()-Y: signed floating point
-* tBodyGyro-std()-Z: signed floating point
-* tBodyGyroJerk-mean()-X: signed floating point         
-* tBodyGyroJerk-mean()-Y: signed floating point
-* tBodyGyroJerk-mean()-Z: signed floating point          
-* tBodyGyroJerk-std()-X: signed floating point
-* tBodyGyroJerk-std()-Y: signed floating point
-* tBodyGyroJerk-std()-Z: signed floating point           
-* tBodyAccMag-mean(): signed floating point              
-* tBodyAccMag-std(): signed floating point               
-* tGravityAccMag-mean(): signed floating point          
-* tGravityAccMag-std(): signed floating point            
-* tBodyAccJerkMag-mean(): signed floating point          
-* tBodyAccJerkMag-std(): signed floating point           
-* tBodyGyroMag-mean(): signed floating point            
-* tBodyGyroMag-std(): signed floating point
-* tBodyGyroJerkMag-mean(): signed floating point         
-* tBodyGyroJerkMag-std(): signed floating point          
-* fBodyAcc-mean()-X: signed floating point              
-* fBodyAcc-mean()-Y: signed floating point
-* fBodyAcc-mean()-Z: signed floating point               
-* fBodyAcc-std()-X: signed floating point                
-* fBodyAcc-std()-Y: signed floating point               
-* fBodyAcc-std()-Z: signed floating point
-* fBodyAcc-meanFreq()-X: signed floating point
-* fBodyAcc-meanFreq()-Y: signed floating point           
-* fBodyAcc-meanFreq()-Z: signed floating point          
-* fBodyAccJerk-mean()-X: signed floating point           
-* fBodyAccJerk-mean()-Y: signed floating point           
-* fBodyAccJerk-mean()-Z: signed floating point           
-* fBodyAccJerk-std()-X: signed floating point           
-* fBodyAccJerk-std()-Y: signed floating point
-* fBodyAccJerk-std()-Z: signed floating point
-* fBodyAccJerk-meanFreq()-X: signed floating point
-* fBodyAccJerk-meanFreq()-Y: signed floating point      
-* fBodyAccJerk-meanFreq()-Z: signed floating point       
-* fBodyGyro-mean()-X: signed floating point
-* fBodyGyro-mean()-Y: signed floating point              
-* fBodyGyro-mean()-Z: signed floating point             
-* fBodyGyro-std()-X: signed floating point               
-* fBodyGyro-std()-Y: signed floating point               
-* fBodyGyro-std()-Z: signed floating point               
-* fBodyGyro-meanFreq()-X: signed floating point         
-* fBodyGyro-meanFreq()-Y: signed floating point
-* fBodyGyro-meanFreq()-Z: signed floating point
-* fBodyAccMag-mean(): signed floating point
-* fBodyAccMag-std(): signed floating point              
-* fBodyAccMag-meanFreq(): signed floating point
-* fBodyBodyAccJerkMag-mean(): signed floating point      
-* fBodyBodyAccJerkMag-std(): signed floating point       
-* fBodyBodyAccJerkMag-meanFreq(): signed floating point 
-* fBodyBodyGyroMag-mean(): signed floating point         
-* fBodyBodyGyroMag-std(): signed floating point          
-* fBodyBodyGyroMag-meanFreq(): signed floating point     
-* fBodyBodyGyroJerkMag-mean(): signed floating point    
-* fBodyBodyGyroJerkMag-std(): signed floating point      
-* fBodyBodyGyroJerkMag-meanFreq(): signed floating point
+* _tBodyAcc-mean()-X_: signed floating point               
+* _tBodyAcc-mean()-Y_: signed floating point
+* _tBodyAcc-mean()-Z_: signed floating point               
+* _tBodyAcc-std()-X_: signed floating point                
+* _tBodyAcc-std()-Y_: signed floating point               
+* _tBodyAcc-std()-Z_: signed floating point
+* _tGravityAcc-mean()-X_: signed floating point
+* _tGravityAcc-mean()-Y_: signed floating point
+* _tGravityAcc-mean()-Z_: signed floating point           
+* _tGravityAcc-std()-X_: signed floating point
+* _tGravityAcc-std()-Y_: signed floating point
+* _tGravityAcc-std()-Z_: signed floating point
+* _tBodyAccJerk-mean()-X_: signed floating point          
+* _tBodyAccJerk-mean()-Y_: signed floating point
+* _tBodyAccJerk-mean()-Z_: signed floating point           
+* _tBodyAccJerk-std()-X_: signed floating point            
+* _tBodyAccJerk-std()-Y_: signed floating point           
+* _tBodyAccJerk-std()-Z_: signed floating point
+* _tBodyGyro-mean()-X_: signed floating point
+* _tBodyGyro-mean()-Y_: signed floating point
+* _tBodyGyro-mean()-Z_: signed floating point
+* _tBodyGyro-std()-X_: signed floating point
+* _tBodyGyro-std()-Y_: signed floating point
+* _tBodyGyro-std()-Z_: signed floating point
+* _tBodyGyroJerk-mean()-X_: signed floating point         
+* _tBodyGyroJerk-mean()-Y_: signed floating point
+* _tBodyGyroJerk-mean()-Z_: signed floating point          
+* _tBodyGyroJerk-std()-X_: signed floating point
+* _tBodyGyroJerk-std()-Y_: signed floating point
+* _tBodyGyroJerk-std()-Z_: signed floating point           
+* _tBodyAccMag-mean()_: signed floating point              
+* _tBodyAccMag-std()_: signed floating point               
+* _tGravityAccMag-mean()_: signed floating point          
+* _tGravityAccMag-std()_: signed floating point            
+* _tBodyAccJerkMag-mean()_: signed floating point          
+* _tBodyAccJerkMag-std()_: signed floating point           
+* _tBodyGyroMag-mean()_: signed floating point            
+* _tBodyGyroMag-std()_: signed floating point
+* _tBodyGyroJerkMag-mean()_: signed floating point         
+* _tBodyGyroJerkMag-std()_: signed floating point          
+* _fBodyAcc-mean()-X_: signed floating point              
+* _fBodyAcc-mean()-Y_: signed floating point
+* _fBodyAcc-mean()-Z_: signed floating point               
+* _fBodyAcc-std()-X_: signed floating point                
+* _fBodyAcc-std()-Y_: signed floating point               
+* _fBodyAcc-std()-Z_: signed floating point
+* _fBodyAcc-meanFreq()-X_: signed floating point
+* _fBodyAcc-meanFreq()-Y_: signed floating point           
+* _fBodyAcc-meanFreq()-Z_: signed floating point          
+* _fBodyAccJerk-mean()-X_: signed floating point           
+* _fBodyAccJerk-mean()-Y_: signed floating point           
+* _fBodyAccJerk-mean()-Z_: signed floating point           
+* _fBodyAccJerk-std()-X_: signed floating point           
+* _fBodyAccJerk-std()-Y_: signed floating point
+* _fBodyAccJerk-std()-Z_: signed floating point
+* _fBodyAccJerk-meanFreq()-X_: signed floating point
+* _fBodyAccJerk-meanFreq()-Y_: signed floating point      
+* _fBodyAccJerk-meanFreq()-Z_: signed floating point       
+* _fBodyGyro-mean()-X_: signed floating point
+* _fBodyGyro-mean()-Y_: signed floating point              
+* _fBodyGyro-mean()-Z_: signed floating point             
+* _fBodyGyro-std()-X_: signed floating point               
+* _fBodyGyro-std()-Y_: signed floating point               
+* _fBodyGyro-std()-Z_: signed floating point               
+* _fBodyGyro-meanFreq()-X_: signed floating point         
+* _fBodyGyro-meanFreq()-Y_: signed floating point
+* _fBodyGyro-meanFreq()-Z_: signed floating point
+* _fBodyAccMag-mean()_: signed floating point
+* _fBodyAccMag-std()_: signed floating point              
+* _fBodyAccMag-meanFreq()_: signed floating point
+* _fBodyBodyAccJerkMag-mean()_: signed floating point      
+* _fBodyBodyAccJerkMag-std()_: signed floating point       
+* _fBodyBodyAccJerkMag-meanFreq()_: signed floating point 
+* _fBodyBodyGyroMag-mean()_: signed floating point         
+* _fBodyBodyGyroMag-std()_: signed floating point          
+* _fBodyBodyGyroMag-meanFreq()_: signed floating point     
+* _fBodyBodyGyroJerkMag-mean()_: signed floating point    
+* _fBodyBodyGyroJerkMag-std()_: signed floating point      
+* _fBodyBodyGyroJerkMag-meanFreq()_: signed floating point
