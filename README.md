@@ -19,10 +19,10 @@ _________________________________
 ## Script inner logic
 
 The provided script performs the following activities in order to create the tidy data set.
-First of all, it loads all the text files for either the train and test sets containing the parameters (X), the response variables (y) and the row index of the subject 
-to whom the variables are related to (subject). Moreover the explanatory labels for the activities and the columns names/labels for the X_train and X_test tables were also loaded. 
-All provided measures, variables, labels and indexes were supplied in text files without headers and specific data separators therefore all the tests have been loaded with the _sep=""_ and _header = FALSE_ options.
-The data about the Inertial Signals are not loaded because they would be discarded by the subsequent tasks anyway. 
+
+First of all, it loads all the text files for either the train and test sets containing the parameters (X), the response variables (y) and the row index of the subject to whom the variables are related to (subject). Moreover the explanatory labels for the activities and the columns names/labels for the X_train and X_test tables were also loaded. 
+All provided measures, variables, labels and indexes were supplied in text files without headers and specific data separators therefore the textual files are loaded with the _sep=""_ and _header = FALSE_ options.
+The data about the Inertial Signals are not loaded and used because they would be discarded by the subsequent tasks anyway. 
 
 ###1.Merges the training and the test sets to create one data set. 
 
@@ -30,25 +30,30 @@ The _rbind_ function is used to merge the test sets and the train sets thus crea
 
 ###2.Extracts only the measurements on the mean and standard deviation for each measurement. 
 
-The columns of X are properly named according to the supplied "feature" file.
 The grep function and the standard subsetting options (_"["_ and _"]"_) are used to "filter" only the columns related to mean ("*mean*") or standard deviation ("*std*") values and the intermediate data are saved in a temporary data frame. 
  
 ###3.Uses descriptive activity names to name the activities in the data set
 
-The activity descriptions are loaded from the activity labels. The activities in the "y" table are properly names by merging the "y" and "activity_labels" using the standard _merge_ command. 
-Though not mandatory in this specific case, in order to preserve the completness of the measures (in terms of number of rows), the all.x = TRUE is used to mimic a sql left join.
+The activity descriptions are loaded from the activity labels.
+The actual merge of the data is performed later. See point "5" below for further details.
 
 ###4.Appropriately labels the data set with descriptive variable names. 
 
 All the columns from the intermediate working data frames are merged in a unique data frame using the _cbind_ function then appropriate labels taken from the supplied "feature" file (or described in the readme included in the original archive) are applied to the column names of the data frame. 
 Please note that, compared to the original files, the temporary "X" data frame has been stripped of some columns during the activities performed in step 2 (see above).
 
+The columns of X are properly named according to the supplied "feature" file.
+
 ###5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Finally the average of all the variables is calculated providing the _avg_ function to the _aggregate_ command while summarizing the values for subject number and nature of the activity. 
-The columns names to whom the data were aggregated are restored and the final data set is extracted with the _write.text_ function.
+The average of all the variables is calculated providing the _avg_ function to the _aggregate_ command while summarizing the values for subject number and nature of the activity. 
 
-As the data contains measures for 30 individual for six possible activities therefore the final "tidy" table should contain 30*6 (=180) rows plus the headers row.
+The activities from the "y" table are properly named by merging the working data frame with the "activity_labels" using the standard _merge_ command. This task is performed at this time because, due to a _"feature"_ of the standard _merge_ command, the rows order is not properly preserved despite specifying the "sort = FALSE" parameter. In order not to erroneously shuffle measures, subject id and activities this step should be mandatorily performed after the columns from "subject", "y" and "X" were already binded toghether.
+Though not essential in this specific case, in order to preserve the completness of the measures (in terms of number of rows), the all.x = TRUE is used to mimic a sql left join.
+
+Finally, the columns names to whom the data were aggregated are restored and the final data set is extracted with the _write.text_ function.
+
+See the supplied "CodeBook.md" for details about the record layout and the assumptions and the choises made in terms of columns preserved and discarded.
 _________________________________
 ## License
 
